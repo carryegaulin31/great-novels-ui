@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export default () => {
   const [title, setTitle] = useState('')
-
+  const [novelList, setNovelList] = useState([])
   return (
     <div className="page">
       <div className="title">Novels</div>
