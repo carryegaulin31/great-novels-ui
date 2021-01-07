@@ -6,14 +6,14 @@ import { getAllNovels, getNovelByIdOrTitle } from './controllers/novels'
 
 const app = express()
 
-app.get('/authors', getAllAuthors)
-app.get('/authors/:identifier', getAuthorByIdOrName)
+app.get('/api/authors', getAllAuthors)
+app.get('/api/authors/:identifier', getAuthorByIdOrName)
 
-app.get('/genres', getAllGenres)
-app.get('/genres/:id', getGenreById)
+app.get('/api/genres', getAllGenres)
+app.get('/api/genres/:id', getGenreById)
 
-app.get('/novels', getAllNovels)
-app.get('/novels/:identifier', getNovelByIdOrTitle)
+app.get('/api/novels', getAllNovels)
+app.get('/api/novels/:identifier', getNovelByIdOrTitle)
 
 app.all('*', (request, response) => response.sendFile(path.resolve(__dirname, 'public', 'index.html')))
 
