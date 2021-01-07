@@ -5,9 +5,9 @@ export default () => {
   const [title, setTitle] = useState('')
   const [novelList, setNovelList] = useState([])
 
-  useEfeect(() => {
+  useEffect(() => {
     async function pullData() {
-      const { data } await
+      const { data } = await 
       axios.get('http://localhost:1337/api/novels')
 
       setNovelList(data)
