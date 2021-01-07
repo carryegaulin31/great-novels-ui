@@ -38,7 +38,6 @@
     "babel-watch": "^7.3.0",
     "env-cmd": "^10.1.0",
     "eslint": "^6.8.0",
-    "nodemon": "^2.0.2",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1"
   }
