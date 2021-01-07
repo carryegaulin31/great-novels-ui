@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./node_modules/.bin/concurrently \"npm run dev:client\" \"npm run dev:server\"",
-    "dev:client": "./node_modules/.bin/webpack --progress --inline --config webpack.dev.js",
+    "dev:client": "./node_modules/.bin/webpack --progress --config webpack.dev.js",
     "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./config/sequelize.js",
     "dev:server": "./node_modules/.bin/env-cmd ./node_modules/.bin/babel-watch server.js",
     "lint": "./node_modules/.bin/eslint --format codeframe .",
@@ -38,6 +38,7 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-watch": "^7.3.0",
+    "concurrently": "^5.3.0",
     "env-cmd": "^10.1.0",
     "eslint": "^6.8.0",
     "webpack": "^5.11.1",

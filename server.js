@@ -1,4 +1,5 @@
-const express = require('express')
+import express from 'express'
+import path from 'path'
 const { getAllAuthors, getAuthorByIdOrName } = require('./controllers/authors')
 const { getAllGenres, getGenreById } = require('./controllers/genres')
 const { getAllNovels, getNovelByIdOrTitle } = require('./controllers/novels')
