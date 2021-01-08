@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Search from './Search'
-import { filterNovels, retrieveNovels } from '../utils'
+import Novel from './Novel'
+import { filterNovels, retrieveNovels } from '../utils/novels'
 
 export default () => {
   const [searchTerm, setSearchTerm] = useState('')

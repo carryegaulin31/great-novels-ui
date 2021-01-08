@@ -305,14 +305,25 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"./node_modules/
 
 /***/ }),
 
-/***/ "./Client.jsx":
+/***/ "./actions/novels.js":
+/*!***************************!*\
+  !*** ./actions/novels.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (async () => {\n  const {\n    data\n  } = await axios__WEBPACK_IMPORTED_MODULE_0___default().get(`${\"http://localhost:1337/api\"}/novels`);\n  return data;\n});\n\n//# sourceURL=webpack://great-novels-ui/./actions/novels.js?");
+
+/***/ }),
+
+/***/ "./client.jsx":
 /*!********************!*\
-  !*** ./Client.jsx ***!
+  !*** ./client.jsx ***!
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _components_Novels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Novels */ \"./components/Novels.jsx\");\n\n\n\n(0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Novels__WEBPACK_IMPORTED_MODULE_2__.default, null), document.getElementById('root'));\n\n//# sourceURL=webpack://great-novels-ui/./Client.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var _components_Novels__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Novels */ \"./components/Novels.jsx\");\n\n\n\n(0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Novels__WEBPACK_IMPORTED_MODULE_2__.default, null), document.getElementById('root'));\n\n//# sourceURL=webpack://great-novels-ui/./client.jsx?");
 
 /***/ }),
 
@@ -334,7 +345,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Search */ \"./components/Search.jsx\");\n/* harmony import */ var _Novel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Novel */ \"./components/Novel.jsx\");\n\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  const [searchTerm, setSearchTerm] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');\n  const [novelList, setNovelList] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);\n  const [filteredNovelList, setFilteredNovelList] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);\n  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {\n    async function pullData() {\n      const {\n        data\n      } = await axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://localhost:1337/api/novels');\n      setNovelList(data);\n      setFilteredNovelList(data);\n    }\n\n    pullData();\n  }, []);\n  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {\n    const filtered = novelList.filter(novel => novel.title.toLowerCase().includes(searchTerm.toLowerCase()));\n    setFilteredNovelList(filtered);\n  }, [searchTerm]);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"div\", {\n    className: \"page\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"div\", {\n    className: \"title\"\n  }, \"Novels\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"div\", {\n    className: \"subtitle\"\n  }, \"A Searchable list of all your favorite novels\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_Search__WEBPACK_IMPORTED_MODULE_2__.default, {\n    term: searchTerm,\n    setter: setSearchTerm\n  }), // eslint-disable-next-line max-len\n  filteredNovelList.map(novel => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_Novel__WEBPACK_IMPORTED_MODULE_3__.default, {\n    key: novel.id,\n    id: novel.id,\n    title: novel.title,\n    authorId: novel.authorId\n  })));\n});\n\n//# sourceURL=webpack://great-novels-ui/./components/Novels.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Search */ \"./components/Search.jsx\");\n/* harmony import */ var _Novel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Novel */ \"./components/Novel.jsx\");\n/* harmony import */ var _utils_novels__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/novels */ \"./utils/novels.js\");\n\n\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  const [searchTerm, setSearchTerm] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');\n  const [novelList, setNovelList] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);\n  const [filteredNovelList, setFilteredNovelList] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);\n  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {\n    async function pullData() {\n      const novels = await (0,_utils_novels__WEBPACK_IMPORTED_MODULE_4__.retrieveNovels)();\n      setNovelList(novels);\n      setFilteredNovelList(novels);\n    }\n\n    pullData();\n  }, []);\n  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {\n    const filtered = (0,_utils_novels__WEBPACK_IMPORTED_MODULE_4__.filterNovels)(novelList, searchTerm);\n    setFilteredNovelList(filtered);\n  }, [searchTerm]);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"div\", {\n    className: \"page\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"div\", {\n    className: \"title\"\n  }, \"Novels\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"div\", {\n    className: \"subtitle\"\n  }, \"A Searchable list of all your favorite novels\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_Search__WEBPACK_IMPORTED_MODULE_2__.default, {\n    term: searchTerm,\n    setter: setSearchTerm\n  }), // eslint-disable-next-line max-len\n  filteredNovelList.map(novel => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_Novel__WEBPACK_IMPORTED_MODULE_3__.default, {\n    key: novel.id,\n    id: novel.id,\n    title: novel.title,\n    authorId: novel.authorId\n  })));\n});\n\n//# sourceURL=webpack://great-novels-ui/./components/Novels.jsx?");
 
 /***/ }),
 
@@ -346,6 +357,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({\n  term,\n  setter\n}) =>\n/*#__PURE__*/\n// eslint-disable-next-line react/react-in-jsx-scope\nreact__WEBPACK_IMPORTED_MODULE_0__.createElement(\"input\", {\n  type: \"text\",\n  name: \"search\",\n  calue: term,\n  onChange: event => setter(event.target.value)\n}));\n\n//# sourceURL=webpack://great-novels-ui/./components/Search.jsx?");
+
+/***/ }),
+
+/***/ "./utils/novels.js":
+/*!*************************!*\
+  !*** ./utils/novels.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"filterNovels\": () => /* binding */ filterNovels,\n/* harmony export */   \"retrieveNovels\": () => /* binding */ retrieveNovels\n/* harmony export */ });\n/* harmony import */ var _actions_novels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/novels */ \"./actions/novels.js\");\n\nconst filterNovels = (list, term) => list.filter(novel => novel.title.toLowerCase().includes(term.toLowerCase()));\nconst retrieveNovels = async () => {\n  const novels = await (0,_actions_novels__WEBPACK_IMPORTED_MODULE_0__.default)();\n  return novels;\n};\n\n//# sourceURL=webpack://great-novels-ui/./utils/novels.js?");
 
 /***/ }),
 
@@ -517,7 +539,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__("./Client.jsx");
+/******/ 	__webpack_require__("./client.jsx");
 /******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ })()
 ;
