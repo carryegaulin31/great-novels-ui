@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Search from './Search'
-import Novel from './Novel'
+import { filterNovels, retrieveNovels } from '../utils'
 
 export default () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -9,18 +9,17 @@ export default () => {
   const [filteredNovelList, setFilteredNovelList] = useState([])
   useEffect(() => {
     async function pullData() {
-      const { data } = await axios.get('http://localhost:1337/api/novels')
+      const novels = await retrieveNovels()
 
-      setNovelList(data)
-      setFilteredNovelList(data)
+      setNovelList(novels)
+      setFilteredNovelList(novels)
     }
 
     pullData()
   }, [])
 
   useEffect(() => {
-    const filtered = novelList.filter(novel => (novel.title.toLowerCase().includes(searchTerm.toLowerCase())
-    ))
+    const filtered = filterNovels(novelList, searchTerm)
 
     setFilteredNovelList(filtered)
   }, [searchTerm])
