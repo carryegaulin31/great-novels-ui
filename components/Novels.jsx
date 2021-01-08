@@ -16,6 +16,13 @@ export default () => {
     }
 
     pullData()
+  }, [])
+
+  useEffect(() => {
+    const filtered = novelList.filter(novel => (novel.title.toLowerCase().includes(searchTerm.toLowerCase())
+    ))
+
+    setFilteredNovelList(filtered)
   }, [searchTerm])
 
   return (
