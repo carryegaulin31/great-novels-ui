@@ -1,3 +1,6 @@
+body {
+  background-color: darkorchid;
+}
 .page {
   margin: 60px auto 0;
   text-align: center;
@@ -20,9 +23,11 @@ input {
   padding: 5px;
   margin: 20px 0;
   outline: none;
+  background-color: gainsboro ;
 }
 
 .novel {
   font-size: 20px;
+  font-weight: 400;
   margin-bottom: 10px;
 }
