@@ -24,8 +24,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1",
-    "mysql": "^2.1.0",
-    "mysql2": "^2.2.5",
+    "mysql2": "^2.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sequelize": "^5.22.3",
