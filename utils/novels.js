@@ -1,11 +1,11 @@
-import axios from 'axios'
+import fetchNovels from '../actions/novels'
 
 export const filterNovels = (list, term) => list.filter(novel => (
   novel.title.toLowerCase().includes(term.toLowerCase())
 ))
 
 export const retrieveNovels = async () => {
-  const { data } = await axios.get('http://localhost:1337/api/novels')
+  const novels = await fetchNovels()
 
-  return data
+  return novels
 }
