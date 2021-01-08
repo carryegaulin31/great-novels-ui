@@ -4,5 +4,3 @@ export default (connection, Sequelize, Genres, Novels) => {
     novelId: { type: Sequelize.INTEGER, references: { model: Novels, key: 'id' } },
   })
 }
-
-

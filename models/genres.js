@@ -4,4 +4,3 @@ export default (connection, Sequelize) => {
     name: { type: Sequelize.STRING, allowNull: false },
   })
 }
-

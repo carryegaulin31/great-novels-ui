@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize'
-import allConfigs from '../configs/sequelize'
+import allConfigs from '../config/sequelize'
 
 import AuthorsModel from './authors'
 import GenresModel from './genres'
@@ -9,9 +9,8 @@ import NovelsGenresModel from './novelsGenres'
 const environment = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
 const config = allConfigs[environment]
 
-
-const connection = new Sequelize(config.database, config.username, config.password, { 
-  host: config.host, dialect: config.dialect })
+// eslint-disable-next-line max-len
+const connection = new Sequelize(config.database, config.username, config.password, { host: config.host, dialect: config.dialect })
 
 const Authors = AuthorsModel(connection, Sequelize)
 const Genres = GenresModel(connection, Sequelize)

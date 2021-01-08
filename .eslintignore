@@ -1,3 +1,5 @@
 # Ignore 
-Webpack Config File
+#Webpack Config File
+webpack.dev.js
+bundle.js
 public

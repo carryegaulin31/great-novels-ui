@@ -7,8 +7,7 @@ export default () => {
 
   useEffect(() => {
     async function pullData() {
-      const { data } = await 
-      axios.get('http://localhost:1337/api/novels')
+      const { data } = await axios.get('http://localhost:1337/api/novels')
 
       setNovelList(data)
     }

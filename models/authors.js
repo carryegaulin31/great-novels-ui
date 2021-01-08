@@ -5,4 +5,3 @@ export default (connection, Sequelize) => {
     nameLast: { type: Sequelize.STRING, allowNull: false },
   })
 }
-

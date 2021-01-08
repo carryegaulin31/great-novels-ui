@@ -5,4 +5,3 @@ export default (connection, Sequelize, Authors) => {
     authorId: { type: Sequelize.INTEGER, references: { model: Authors, key: 'id' } },
   })
 }
-
