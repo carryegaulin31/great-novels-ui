@@ -4,7 +4,7 @@ import Search from './Search'
 import Novel from './Novel'
 
 export default () => {
-  const [title, setTitle] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
   const [novelList, setNovelList] = useState([])
 
   useEffect(() => {
@@ -15,13 +15,13 @@ export default () => {
     }
 
     pullData()
-  }, [])
+  }, [searchTerm])
 
   return (
     <div className="page">
       <div className="title">Novels</div>
       <div className="subtitle">A Searchable list of all your favorite novels</div>
-      <Search term={title} setter={setTitle} />
+      <Search term={searchTerm} setter={setSearchTerm} />
       {
         novelList.map(novel => (<Novel key={novel.id} id={novel.id} title={novel.title} authorId={novel.authorId} />))
       }
