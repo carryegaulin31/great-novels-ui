@@ -6,12 +6,13 @@ import Novel from './Novel'
 export default () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [novelList, setNovelList] = useState([])
-
+  const [filteredNovelList, setFilteredNovelList] = useState([])
   useEffect(() => {
     async function pullData() {
       const { data } = await axios.get('http://localhost:1337/api/novels')
 
       setNovelList(data)
+      setFilteredNovelList(data)
     }
 
     pullData()
@@ -23,7 +24,8 @@ export default () => {
       <div className="subtitle">A Searchable list of all your favorite novels</div>
       <Search term={searchTerm} setter={setSearchTerm} />
       {
-        novelList.map(novel => (<Novel key={novel.id} id={novel.id} title={novel.title} authorId={novel.authorId} />))
+        // eslint-disable-next-line max-len
+        filteredNovelList.map(novel => (<Novel key={novel.id} id={novel.id} title={novel.title} authorId={novel.authorId} />))
       }
     </div>
   )
